@@ -1,0 +1,100 @@
+
+<body style="background: rgb(206, 214, 212);">
+    <div class="login">
+       <h1 style="color:black;">Welcome to Rescue Driver Predictor</h1>
+       <h2 style="color:black;">This application is created for Berlin’s Red-Cross Rescue Service to estimate numbers of standby rescue drivers activated daily</h2> 
+        <!-- Action is where the data is sent. In our case, predict page.
+        If action is omitted, it assumed to be the current page -->
+       <form action="{{ url_for('predict')}}"method="post">
+            <h3>Enter date</h3>   
+            <input id="fifth" type="date" name="dates" placeholder="date" required="required" /><br>
+            <h3>Enter number of sick driver</h3>  
+            <input id="first" name="Number of sick driver" type="number" placeholder="Number of sick driver" required="required"/><br>
+            <h3>Enter number of emergency calls</h3> 
+            <input id="second" name="Number of calls" type="number"  placeholder="Emergency calls" required="required" /><br>
+            <h3>Enter number of drivers on duty</h3>
+            <input id ="third"  name="Number of drivers on duty" type="number" placeholder="Drivers on duty" required="required" /><br>
+            <h3>Enter dafted (please keep it 0 as we don't want any additional standby driver)</h3>
+            <input id = "fourth" name="Dafted" type="number"  placeholder="Dafted" required="required" />
+            <p>
+            <button id="sub" type="submit" >Predict </button></p>    
+           
+            <!--<button id="sub" type="submit" class="btn btn-primary btn-block btn-large">Predict estimated number of stand by rescue drivers </button></p> -->
+       </form>
+   
+        <br>
+      <h2 style="color:black;">
+      {{ prediction_text}} </h2>
+   
+    </div>
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+            font-family: "Times New Roman";
+        }
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Times New Roman";
+        }
+        #sub {
+            width: 120px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            font-family: "Times New Roman";
+            background-color: rgb(250, 248, 245);
+        }
+    </style>
+    </style>
